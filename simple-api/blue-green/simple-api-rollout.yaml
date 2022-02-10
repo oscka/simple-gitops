@@ -1,0 +1,33 @@
+
+apiVersion: argoproj.io/v1alpha1  
+kind: Rollout 
+
+metadata:
+  name: simple-api-rollout
+  namespace: api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: simple-api
+  template:
+    metadata:
+      labels:
+        app: simple-api
+    spec:
+      containers:
+      - name: simple-api
+        image: skaqud/simple-api
+        ports:
+        - name: http
+          containerPort: 8080
+  minReadySeconds: 30
+  revisionHistoryLimit: 3
+  strategy:
+  # ----- Everything above this comment are the same as a deployment -----
+    blueGreen: # A new field for the Blue Green strategy options
+      previewService: simple-api-preview # Reference to a service
+      activeService: simple-api-active # Reference to a service
+      autoPromotionEnabled: false
+      previewReplicaCount: 1
+      scaleDownDelaySeconds: 60  
