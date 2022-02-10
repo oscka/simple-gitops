@@ -8,4 +8,4 @@ resources:
 - ingress-preview-simple-api.yaml
 images:
 - name: skaqud/simple-api
-  newTag: RB0.0.5
+  newTag: RB0.0.6
