@@ -9,4 +9,4 @@ resources:
 
 images:
 - name: skaqud/simple-api
-  newTag: RB0.0.6
+  newTag: RB0.0.7
