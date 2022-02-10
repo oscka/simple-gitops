@@ -1,0 +1,45 @@
+apiVersion: argoproj.io/v1alpha1 
+kind: Rollout 
+metadata:
+  name: simple-api-rollout
+  namespace: api
+  labels:
+    app: simple-api
+    
+   
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: simple-api
+  template:
+    metadata:
+      labels:
+        app: simple-api
+         
+    spec:
+      containers:
+      - name: simple-api
+        image: skaqud/simple-api
+        imagePullPolicy: Always
+        ports:
+        - name: http
+          containerPort: 8080
+          
+  minReadySeconds: 30
+  revisionHistoryLimit: 3
+  strategy:
+    canary: 
+          steps:
+          - setWeight: 25
+          - pause: {}
+          - setWeight: 50
+          - pause: {} 
+          - setWeight: 75
+          - pause: {}
+         
+          
+
+
+  
+        
