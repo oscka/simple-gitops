@@ -5,4 +5,4 @@ resources:
 - ingress.yaml
 images:
 - name: skaqud/simple-api
-  newTag: RB0.0.4
+  newTag: RB0.0.5
