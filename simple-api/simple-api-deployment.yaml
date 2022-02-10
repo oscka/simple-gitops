@@ -20,7 +20,7 @@ spec:
         image: skaqud/simple-api  # on server
         # image: simple-api
         ports: 
-        - name: http
+        - name: http  # 하단의 이름으로 연결
           containerPort: 8080
 --- 
 apiVersion: v1
