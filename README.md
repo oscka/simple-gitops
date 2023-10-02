@@ -10,8 +10,9 @@ simple-api를 위한 gitops 프로젝트. 각각 blue-green, canary, rolling upd
 .
 ├── README.md
 └── simple-api
-    ├── blue-green                       # rollout 기반 blue-green 배포정책
-    ├── canary                           # rollout 기반 canary 배포정책
-    ├── rolling-update                   # rollout 기반 rolling update 배포정책
-    └── rolling-update-with-deployment   # deployment 기반 rolling update 배포정책
+    ├── blue-green                       # rollout 기반 blue-green 배포정책(istio)
+    ├── canary                           # rollout 기반 canary 배포정책(istio)
+    ├── rolling-update                   # rollout 기반 rolling update 배포정책(istio)
+    └── rolling-update-with-deployment   # deployment 기반 rolling update 배포정책(istio)
+    └── rolling-update-no-istio          # deployment 기반 rolling update 배포정책(non-istio)
 ```

@@ -2,10 +2,10 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
+- simple-api-deployment.yaml
 - simple-api-svc.yaml
-- simple-api-rollout.yaml
-- simple-api-gateway.yaml
+- simple-api-ingress.yaml
 
 images:
-- name: skaqud/simple-api
-  newTag: RB0.0.7
+- name: oscka/simple-api
+  newTag: 0.0.1
