@@ -3,7 +3,7 @@ kind: Kustomization
 resources:
 - simple-api-svc.yaml
 - simple-api-deployment.yaml
-- ingress-simple-api.yaml
+- simple-api-gateway.yaml
 
 images:
 - name: skaqud/simple-api

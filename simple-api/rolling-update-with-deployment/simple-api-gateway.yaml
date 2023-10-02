@@ -3,7 +3,7 @@ apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
   name: simple-api-gateway
-  namespace: api 
+  namespace: sample
 spec:
   selector:
     istio: ingressgateway # use istio default controller
@@ -19,7 +19,7 @@ apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
   name: simple-api-vs
-  namespace: api 
+  namespace: sample
 spec:
   hosts:
   - "dev.simple-api.127.0.0.1.sslip.io"

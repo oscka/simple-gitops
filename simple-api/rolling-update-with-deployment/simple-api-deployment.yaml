@@ -2,11 +2,11 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: simple-api-deployment
-  namespace: api
+  namespace: sample
   labels:
     app: simple-api
 spec:
-  replicas: 4
+  replicas: 1
   selector:
     matchLabels:
       app: simple-api
