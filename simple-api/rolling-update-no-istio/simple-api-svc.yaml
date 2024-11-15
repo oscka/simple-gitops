@@ -7,7 +7,6 @@ metadata:
 spec:
   selector:
     app: simple-api
-  
   ports:
   - protocol: TCP
     name: http
