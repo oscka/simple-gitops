@@ -15,7 +15,7 @@ spec:
     metadata:
       
       labels:
-        app: simple-api-test  
+        app: simple-api     
     spec:
       containers:
         - name: simple-api

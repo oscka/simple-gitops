@@ -6,7 +6,7 @@ metadata:
   namespace: sample
 spec:
   selector:
-    app: simple-api-test
+    app: simple-api
   ports:
   - protocol: TCP
     name: http
