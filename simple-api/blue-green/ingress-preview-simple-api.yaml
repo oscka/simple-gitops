@@ -7,7 +7,7 @@ metadata:
     kubernetes.io/ingress.class: nginx
 spec:
   rules:
-  - host: "simple-api-green.192.168.0.58.sslip.io"
+  - host: "simple-api-preview.192.168.0.58.sslip.io"
     http:
       paths:
       - pathType: Prefix
