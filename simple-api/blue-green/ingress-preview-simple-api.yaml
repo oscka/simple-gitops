@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: simple-api-ingress-green
+  name: simple-api-ingress-preview
   namespace: deployment-strategy
   annotations:
     kubernetes.io/ingress.class: nginx
