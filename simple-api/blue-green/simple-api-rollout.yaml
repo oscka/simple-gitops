@@ -4,7 +4,7 @@ kind: Rollout
 # ==== 이 아래의 내용은 기존 Deployment와 동일하게 작성 ====
 metadata:
   name: simple-api-rollout
-  namespace: api
+  namespace: deployment-strategy
 spec:
   replicas: 2
   selector:

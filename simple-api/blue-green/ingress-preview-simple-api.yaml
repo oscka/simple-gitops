@@ -1,36 +1,19 @@
-
-apiVersion: networking.istio.io/v1alpha3
-kind: Gateway
+apiVersion: networking.k8s.io/v1
+kind: Ingress
 metadata:
-  name: simple-api-gateway-preview
-  namespace: api 
+  name: simple-api-ingress-green
+  namespace: deployment-strategy
+  annotations:
+    kubernetes.io/ingress.class: nginx
 spec:
-  selector:
-    istio: ingressgateway # use istio default controller
-  servers:
-  - port:
-      number: 80
-      name: http
-      protocol: HTTP
-    hosts:
-    - "dev.simple-api-preview.127.0.0.1.sslip.io"
----
-apiVersion: networking.istio.io/v1alpha3
-kind: VirtualService
-metadata:
-  name: simple-api-vs-preview
-  namespace: api 
-spec:
-  hosts:
-  - "dev.simple-api-preview.127.0.0.1.sslip.io"
-  gateways:
-  - simple-api-gateway-preview
-  http:
-  - match:
-    - uri:
-        prefix: /
-    route:
-    - destination:
-        host: simple-api-preview
-        port:
-          number: 9090
+  rules:
+  - host: "simple-api-green.192.168.0.58.sslip.io"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: simple-api-svc
+            port:
+              number: 8080

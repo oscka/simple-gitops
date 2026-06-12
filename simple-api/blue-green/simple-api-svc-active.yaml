@@ -1,13 +1,11 @@
 ######### 
 # Service
 #########
-
-
 apiVersion: v1
 kind: Service
 metadata:
   name: simple-api-active
-  namespace: api
+  namespace: deployment-strategy
   labels:
     app: simple-api
 spec:
